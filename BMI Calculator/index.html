@@ -6,8 +6,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="bmiCalculator.css">
+
     <title>BMI Calculator</title>
+    <style>
+      *{
+    font-family: "Rowdies", sans-serif;
+    font-weight: 700;
+    font-style: normal;    
+}
+body{
+    background-color: grey;
+}
+.parentDiv{
+    background-color: transparent;
+    border-radius: 12vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+    margin-top: 8%;
+    padding: 2% 4% 0.5% 4%;
+    /* border: 1px solid black; */
+    
+}
+input{
+    margin-bottom: 2%;
+    height: 5vh;
+}
+button{
+    width: 88%;
+    background-color: #ff0000;
+    height: 6vh;
+    border-radius: 10vh;
+    color: whitesmoke;
+    font-size: large;
+    font-weight: 300;
+}
+button:hover{
+    background-color: aqua;
+    color: black;
+    cursor: pointer;
+}
+#result{
+    margin: auto;
+    margin: 2% 0 2% 8% ;
+    text-align: left;
+}
+
+    </style>
 </head>
 <body>
     <div class="parentDiv">
@@ -20,5 +66,31 @@
     </div>
 
 </body>
-<script src="./bmiCalculator.js"></script>
+<script>
+  
+let calculateBtn=document.getElementById("btn");
+let weight=document.getElementById("weight");
+let height=document.getElementById("height");
+let result=document.getElementById("result");
+
+calculateBtn.addEventListener("click", function(){
+     let bmi= Number (weight.value/height.value*height.value);
+
+    if(bmi <= 18.4){
+        return result.innerText=`Your BMI is ${Math.round(bmi)} it means you are Under Weight`;
+    }else if(bmi >= 18.5 && bmi <= 24.9){
+        return result.innerText=`Your BMI is ${Math.round(bmi)} it means you are Normal Weight`;
+    }else if(bmi >= 25 && bmi <= 29.9){
+        return result.innerText=`Your BMI is ${Math.round(bmi)} it means you are Over Weight`;
+    }else if(bmi >= 30){
+        return result.innerText=`Your BMI is ${Math.round(bmi)} it means you are Obese`;
+    }else{
+        return alert( "Please enter valid numbers");
+    }
+
+});
+
+
+
+</script>
 </html>
