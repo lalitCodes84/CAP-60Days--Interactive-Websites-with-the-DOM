@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Masai investors using DOM</title>
+    <style>
+        *{
+           font-family: "Rowdies", sans-serif;
+           font-weight: 500;
+           font-style: normal; 
+        }
+        #investorHeading{
+            text-align: center;
+        }
+        #parentDivInvestors{
+            width: 100%;
+            padding: 2% 0 2% 0;
+            border: 1px solid black;
+            display: flex;
+            column-gap: 2%;
+
+        }
+        .investors{
+            border: 1px solid black;
+            padding: 2%;
+        }
+    </style>
+</head>
+<body>
+  <div id="root">
+    <!-- This is where our app will be rendered -->
+  </div>
+</body>
+<script>
+
+    // Strategic Investors Heading js Section creating element and appending
+    let h1Element=document.createElement("h1");
+    // Adding text to the element
+        h1Element.innerText="Strategic Investors";
+        h1Element.setAttribute("id","investorHeading");
+        document.getElementById("root").appendChild(h1Element);
+
+        // Investors images and Info section js creating and appending investors
+        let parentDivInvestors=document.createElement("div");
+        parentDivInvestors.setAttribute("id","parentDivInvestors");
+        document.getElementById("root").appendChild(parentDivInvestors);
+
+        // Creating object for investors
+        
+
+       
+
+      
+
+       
+
+</script>
+</html>
